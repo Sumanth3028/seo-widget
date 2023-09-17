@@ -6,7 +6,7 @@ import Data from './components/Data';
 
 function App() {
   return (
-    <div className="bg-gray-200 h-screen w-full">
+    <div className="bg-white h-screen w-full">
       <Routes>
         <Route path='/' element={<SearchBar/>}/>
         <Route path='/data' element={<Data/>}/>
