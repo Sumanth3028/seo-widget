@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import { Route, Routes } from 'react-router-dom';
@@ -8,11 +7,11 @@ function App() {
   return (
     <div className="bg-white h-screen w-full">
       <Routes>
-        <Route path='/' element={<SearchBar/>}/>
-        <Route path='/data' element={<Data/>}/>
+        <Route path='/' element={<SearchBar />} />
+        <Route path='/data' element={<Data />} />
 
       </Routes>
-      
+
     </div>
   );
 }

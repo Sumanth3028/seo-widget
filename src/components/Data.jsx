@@ -1,6 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 
 const Data = (props) => {
   let result = localStorage.getItem("data");
@@ -12,12 +10,12 @@ const Data = (props) => {
   return (
     <div>
       <div className=" ml-[620px] my-24 h-[200px] ">
-        <h1 className="text-xl">Results for {response?.tasks[0]?.data?.url}</h1>
+        <h1 className="text-xl">Results for {response?.data.tasks[0]?.data?.url}</h1>
 
         <div className="h-[210px] w-[210px] flex justify-center items-center bg-[#6DD29F] mx-5 my-7   rounded-full border-3">
           <div className="h-[180px] w-[180px] flex flex-col rounded-full justify-center items-center bg-white border border-gray-500">
             <h1 className="font-bold text-5xl">
-              {response?.tasks[0]?.result[0]?.items[0]?.onpage_score}
+              {response?.data.tasks[0]?.result[0]?.items[0]?.onpage_score}
             </h1>
             <h1 className="font-bold text-2xl italic text-[#6DD29F] font-Helvetica">
               {" "}
@@ -32,7 +30,7 @@ const Data = (props) => {
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.meta
+                response?.data.tasks[0]?.result[0]?.items[0]?.meta
                   ?.internal_links_count
               }
             </h1>
@@ -40,14 +38,14 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.encoded_size}
+              {response?.data.tasks[0]?.result[0]?.items[0]?.encoded_size}
             </h1>
             <h1 className=" text-xl">Encoded Size</h1>
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.meta?.content
+                response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content
                   ?.plain_text_size
               }
             </h1>
@@ -55,7 +53,7 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.meta?.content?.plain_text_rate.toFixed(
+              {response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content?.plain_text_rate.toFixed(
                 2
               )}
             </h1>
@@ -64,7 +62,7 @@ const Data = (props) => {
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.meta?.content
+                response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content
                   ?.plain_text_word_count
               }
             </h1>
@@ -72,7 +70,7 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.meta?.content?.automated_readability_index.toFixed(
+              {response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content?.automated_readability_index.toFixed(
                 2
               )}
             </h1>
@@ -80,7 +78,7 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.meta?.content?.coleman_liau_readability_index.toFixed(
+              {response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content?.coleman_liau_readability_index.toFixed(
                 2
               )}
             </h1>
@@ -88,7 +86,7 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.meta?.content?.dale_chall_readability_index.toFixed(
+              {response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content?.dale_chall_readability_index.toFixed(
                 2
               )}
             </h1>
@@ -96,7 +94,7 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.meta?.content?.description_to_content_consistency.toFixed(
+              {response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content?.description_to_content_consistency.toFixed(
                 2
               )}
             </h1>
@@ -104,7 +102,7 @@ const Data = (props) => {
           </div>
           <div className="w-[200px] h-[110px] rounded-md border-2  flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
-              {response?.tasks[0]?.result[0]?.items[0]?.meta?.content?.flesch_kincaid_readability_index.toFixed(
+              {response?.data.tasks[0]?.result[0]?.items[0]?.meta?.content?.flesch_kincaid_readability_index.toFixed(
                 2
               )}
             </h1>
@@ -118,7 +116,7 @@ const Data = (props) => {
           <div className="w-[300px] h-[110px] rounded-md border-2  bg-gray-200 flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.page_timing
+                response?.data.tasks[0]?.result[0]?.items[0]?.page_timing
                   .time_to_secure_connection
               }
             </h1>
@@ -127,7 +125,7 @@ const Data = (props) => {
           <div className="w-[300px] h-[110px] rounded-md border-2  bg-gray-200 flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.page_timing
+                response?.data.tasks[0]?.result[0]?.items[0]?.page_timing
                   .waiting_time
               }
             </h1>
@@ -136,7 +134,7 @@ const Data = (props) => {
           <div className="w-[300px] h-[110px] rounded-md border-2  bg-gray-200 flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.page_timing
+                response?.data.tasks[0]?.result[0]?.items[0]?.page_timing
                   .download_time
               }
             </h1>
@@ -145,7 +143,7 @@ const Data = (props) => {
           <div className="w-[300px] h-[110px] rounded-md border-2  bg-gray-200 flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.page_timing
+                response?.data.tasks[0]?.result[0]?.items[0]?.page_timing
                   .time_to_interactive
               }
             </h1>
@@ -154,7 +152,7 @@ const Data = (props) => {
           <div className="w-[300px] h-[110px] rounded-md border-2  bg-gray-200 flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.page_timing
+                response?.data.tasks[0]?.result[0]?.items[0]?.page_timing
                   .dom_complete
               }
             </h1>
@@ -163,7 +161,7 @@ const Data = (props) => {
           <div className="w-[300px] h-[110px] rounded-md border-2  bg-gray-200 flex flex-col items-center justify-center">
             <h1 className="text-2xl  font-bold ">
               {
-                response?.tasks[0]?.result[0]?.items[0]?.page_timing
+                response?.data.tasks[0]?.result[0]?.items[0]?.page_timing
                   .largest_contentful_paint
               }
             </h1>
@@ -171,7 +169,7 @@ const Data = (props) => {
           </div>
         </div>
       </div>
-     
+
     </div>
   );
 };
