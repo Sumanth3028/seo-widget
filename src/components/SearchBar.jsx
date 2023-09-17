@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import bgimage from '../undraw_Search.png'
 const SearchBar = (props) => {
   const [url, setUrl] = useState("");
 
@@ -50,7 +50,7 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className="flex flex-col  ">
+    <div className="flex flex-col justify-center items-center  ">
       <form className="flex flex-col items-center  " >
         <div className="relative  my-[100px]">
           <input
@@ -67,6 +67,8 @@ const SearchBar = (props) => {
 
 
       </form>
+
+      <img src={bgimage} alt="" className=" w-[300px]" />
 
     </div>
   );
